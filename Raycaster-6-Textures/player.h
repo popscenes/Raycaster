@@ -20,5 +20,5 @@ typedef struct {
 extern player_t player;
 
 void drawPlayer();
-void movePlayer(input_t input, float deltaTime);
+void movePlayer(input_t *input, float deltaTime);
 

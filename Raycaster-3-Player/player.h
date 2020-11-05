@@ -18,4 +18,4 @@ typedef struct {
 } player_t;
 
 void drawPlayer();
-void movePlayer(input_t input, float deltaTime);
+void movePlayer(input_t *input, float deltaTime);

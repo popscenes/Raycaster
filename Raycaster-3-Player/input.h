@@ -10,4 +10,4 @@ typedef struct
 	bool exitGame;
 } input_t;
 
-input_t GetInput();
+void GetInput(input_t* result);

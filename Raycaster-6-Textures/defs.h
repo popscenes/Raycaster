@@ -12,7 +12,7 @@
 #define FPS 30
 #define FRAME_TIME_LENGTH (1000/FPS)
 
-#define MINI_MAP_SCALE 0.1
+#define MINI_MAP_SCALE 0.05
 
 #define DIST_PROJ_PLANE ((BUFFER_WIDTH / 2) / tan(FOV_ANGLE / 2))
 

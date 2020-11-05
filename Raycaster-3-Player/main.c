@@ -19,6 +19,9 @@ void setup()
 
 void update()
 {
+	input_t input = { 0 };
+	GetInput(&input);
+
 	// Compute how long we have until the reach the target frame time in milliseconds
 	int timeToWait = FRAME_TIME_LENGTH - (SDL_GetTicks() - ticksLastFrame);
 
@@ -31,14 +34,12 @@ void update()
 
 	// Store the milliseconds of the current frame to be used in the future
 	ticksLastFrame = SDL_GetTicks();
-
-	input_t input = GetInput();
 	if (input.exitGame)
 	{
 		isGameRunning = false;
 	}
 
-	movePlayer(input, deltaTime);
+	movePlayer(&input, deltaTime);
 }
 
 void render()

@@ -18,9 +18,9 @@ void drawRectangle(int x, int y, int width, int height, uint32_t colour)
 		return;
 	}
 
-	for (int ypos = y; ypos <= (y + height); ypos++)
+	for (int ypos = y; ypos < (y + height); ypos++)
 	{
-		for (int xpos = x; xpos <= (x +width); xpos++)
+		for (int xpos = x; xpos < (x +width); xpos++)
 		{
 			colourBuffer[(ypos * BUFFER_WIDTH) + xpos] = colour;
 		}

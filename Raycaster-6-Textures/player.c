@@ -20,10 +20,10 @@ void drawPlayer()
 	drawLine(lineStartX* MINI_MAP_SCALE, lineStartY* MINI_MAP_SCALE, (lineStartX + cos(player.rotationAngle) * 40)* MINI_MAP_SCALE, (lineStartY + sin(player.rotationAngle) * 40)* MINI_MAP_SCALE, 0xFFFFFFFF);
 }
 
-void movePlayer(input_t input, float deltaTime)
+void movePlayer(input_t *input, float deltaTime)
 {
-	float stepDistance = input.walkDirection * player.walkSpeed * deltaTime;
-	float rotationAmount = input.turnDirection * player.rotationSpeed * deltaTime;
+	float stepDistance = input->walkDirection * player.walkSpeed * deltaTime;
+	float rotationAmount = input->turnDirection * player.rotationSpeed * deltaTime;
 
 	player.rotationAngle += rotationAmount;
 
