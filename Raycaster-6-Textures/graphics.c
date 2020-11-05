@@ -7,10 +7,15 @@ static SDL_Renderer* renderer = NULL;
 static uint32_t* colourBuffer = NULL;
 static SDL_Texture* colourBufferTexture;
 
-uint32_t* GetColourBuffer()
+//void GetColourBuffer(uint32_t *buffrPtr)
+//{
+//	buffrPtr = colourBuffer;
+//}
+void DrawPixel(int x, int y, uint32_t colour)
 {
-	return colourBuffer;
+	colourBuffer[(y * BUFFER_WIDTH) + x] = colour;
 }
+
 void drawRectangle(int x, int y, int width, int height, uint32_t colour)
 {	
 	if (x < 0 || (x + width) > BUFFER_WIDTH || y < 0 || (y + height) > BUFFER_HEIGHT)

@@ -12,6 +12,8 @@ static const char* textureFileNames[NUMTEXTURES] = {
     "./images/wisr.png"
 };
 
+texture_t wallTextures[NUMTEXTURES];
+
 void loadWallTextures() {
     for (int i = 0; i < NUMTEXTURES; i++) {
         upng_t* upng;

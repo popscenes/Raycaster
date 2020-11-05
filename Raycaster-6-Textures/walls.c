@@ -4,7 +4,6 @@
 
 void drawWalls()
 {
-	uint32_t* buffer = GetColourBuffer();
 	for (int x = 0; x < NUM_RAYS; x++)
 	{
 		//float distToWall = rays[x].distance;
@@ -21,7 +20,7 @@ void drawWalls()
 
 		for (int y = 0; y < wallTop; y++)
 		{
-			buffer[(y * BUFFER_WIDTH) + x] = 0xFF888888;
+			DrawPixel(x, y, 0xFF888888);
 		}
 
 		uint32_t textureOffsetX = 0;
@@ -34,7 +33,7 @@ void drawWalls()
 			textureOffsetX = (int)rays[x].wallHitX % TILE_SIZE;
 		}
 		
-		for (int y = wallTop; y <= wallBottom; y++)
+		for (int y = wallTop; y < wallBottom; y++)
 		{
 			
 			int textureId = rays[x].wallHitContent - 1;
@@ -48,17 +47,17 @@ void drawWalls()
 			if (rays[x].wasHitVertical)
 			{
 				//texelColour = (0xFF << 24) & (((texelColour & 0x00FF0000) >> 16) - 10 << 16) & ((texelColour & 0x00FF00) - 10 << 8) & ((texelColour & 0x000000FF) - 10);
-				buffer[(y * BUFFER_WIDTH) + x] = texelColour;
+				DrawPixel(x, y, texelColour);
 			}
 			else
 			{
-				buffer[(y * BUFFER_WIDTH) + x] = texelColour;
+				DrawPixel(x, y, texelColour);
 			}
 		}
 
-		for (int y = (wallBottom+1); y < BUFFER_HEIGHT; y++)
+		for (int y = wallBottom; y < BUFFER_HEIGHT; y++)
 		{
-			buffer[(y * BUFFER_WIDTH) + x] = 0xFF555555;
+			DrawPixel(x, y, 0xFF555555);
 		}
 	}
 }

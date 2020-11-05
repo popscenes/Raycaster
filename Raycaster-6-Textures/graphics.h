@@ -10,4 +10,5 @@ void drawLine(int x0, int y0, int x1, int y1, uint32_t colour);
 void destroyWindow();
 void renderColourBuffer();
 void clearColourBuffer(uint32_t colour);
-uint32_t* GetColourBuffer();
+//void GetColourBuffer(uint32_t* buffrPtr);
+void DrawPixel(int x, int y, uint32_t colour);

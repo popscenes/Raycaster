@@ -23,7 +23,7 @@ void drawWalls()
 			buffer[(y * BUFFER_WIDTH) + x] = 0xFF888888;
 		}
 		
-		for (int y = wallTop; y <= wallBottom; y++)
+		for (int y = wallTop; y < wallBottom; y++)
 		{
 			if (rays[x].wasHitVertical)
 			{
@@ -35,7 +35,7 @@ void drawWalls()
 			}
 		}
 
-		for (int y = (wallBottom+1); y < BUFFER_HEIGHT; y++)
+		for (int y = (wallBottom); y < BUFFER_HEIGHT; y++)
 		{
 			buffer[(y * BUFFER_WIDTH) + x] = 0xFF555555;
 		}

@@ -29,6 +29,12 @@ void drawRectangle(int x, int y, int width, int height, uint32_t colour)
 
 void drawLine(int x0, int y0, int x1, int y1, uint32_t colour)
 {
+	
+	if (x0 < 0 || x1 > BUFFER_WIDTH || y0 < 0 || y1 > BUFFER_HEIGHT)
+	{
+		return;
+	}
+
 	int deltaX = x1 - x0;
 	int deltaY = y1 - y0;
 

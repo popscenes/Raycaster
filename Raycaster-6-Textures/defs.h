@@ -2,8 +2,8 @@
 #define PI 3.14159265
 #define TWO_PI 6.28318530
 
-#define BUFFER_WIDTH 320
-#define BUFFER_HEIGHT 240
+#define BUFFER_WIDTH 640
+#define BUFFER_HEIGHT 480
 
 #define FOV_ANGLE (60 * (PI / 180))
 
