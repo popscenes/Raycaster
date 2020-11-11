@@ -55,9 +55,34 @@ void drawWalls()
 			}
 		}
 
+		
+		
+
 		for (int y = wallBottom; y < BUFFER_HEIGHT; y++)
 		{
-			DrawPixel(x, y, 0xFF555555);
+			float ratio = 32.0f / (y - (BUFFER_HEIGHT/2));
+
+			float diagonalDistance = (DIST_PROJ_PLANE * ratio);
+			diagonalDistance *= 1.0f/cos(rays[x].rayAngle - player.rotationAngle);
+
+			float yEnd = diagonalDistance * sin(rays[x].rayAngle);
+			float xEnd = diagonalDistance * cos(rays[x].rayAngle);
+
+			xEnd += player.x;
+			yEnd += player.y;
+
+			if(isInMap(xEnd, yEnd))
+			{
+				int textureY = (int)yEnd % TILE_SIZE;
+				int textureX = (int)xEnd % TILE_SIZE;
+				int textureWidth = wallTextures[1].width;
+				int textureHeight = wallTextures[1].height;
+
+				uint32_t texel = wallTextures[5].texture_buffer[(textureY * textureWidth) + textureX];
+				DrawPixel(x, y, texel);
+			}
+			
+			//DrawPixel(x, y, 0xFF555555);
 		}
 	}
 }
