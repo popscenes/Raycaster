@@ -6,8 +6,8 @@ void drawWalls()
 	uint32_t* buffer = GetColourBuffer();
 	for (int x = 0; x < NUM_RAYS; x++)
 	{
-		//float distToWall = rays[x].distance;
-		float distToWall = rays[x].distance * cos(rays[x].rayAngle - player.rotationAngle);
+		float distToWall = rays[x].distance;
+		//float distToWall = rays[x].distance * cos(rays[x].rayAngle - player.rotationAngle);
 		
 		float wallHeight = (TILE_SIZE / distToWall) * DIST_PROJ_PLANE;
 

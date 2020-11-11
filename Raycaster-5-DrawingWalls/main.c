@@ -50,9 +50,9 @@ void render()
 	clearColourBuffer(0xFF666666);
 
 	drawWalls();
-	drawMap();
-	drawPlayer();
-	drawRays();
+	//drawMap();
+	//drawPlayer();
+	//drawRays();
 	renderColourBuffer();
 }
 
